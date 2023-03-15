@@ -6,14 +6,14 @@ body {
 }
 
 header {
-    background-color: black; 
+    background: linear-gradient(to left top, white,lightcyan,teal,black); 
     color: antiquewhite; 
     padding: 10px; 
     font-size: 16pt;
 }
 
 footer {
-    background-color: black; 
+    background: linear-gradient(to right bottom, white,lightcyan,teal,black);
     color:antiquewhite; 
     padding: 15px; 
     font-size: 10pt;
@@ -22,22 +22,21 @@ footer {
 }
 
 a {
-
 }
 
 a:visited {
-    color: darkslategrey;
+    color: purple;
     text-decoration: underline;
 }
 
 a:hover {
-    color: red;
+    color: teal;
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
 }
 
 a:active{
-    color: pink;
-    background-color: green;
+    color: indigo;
+    background-color: lavender;
 }
