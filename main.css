@@ -1,0 +1,22 @@
+body {
+    background-color: lightcyan; 
+    color: teal; 
+    font-family: Arial; 
+    margin: 0px;
+}
+
+header {
+    background-color: black; 
+    color: antiquewhite; 
+    padding: 10px; 
+    font-size: 16pt;
+}
+
+footer {
+    background-color: black; 
+    color:antiquewhite; 
+    padding: 15px; 
+    font-size: 10pt;
+    font-style: italic; 
+    text-align: right;
+}
