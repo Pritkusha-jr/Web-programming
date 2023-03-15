@@ -12,6 +12,14 @@ header {
     font-size: 16pt;
 }
 
+header:hover {
+    color: white;
+    font-weight: bold;
+    font-size: 20pt;
+    text-shadow: 2px 4px 3px DarkSlateGrey;
+    transition: 400ms 100ms;
+}
+
 footer {
     background: linear-gradient(to right bottom, white,lightcyan,teal,black);
     color:antiquewhite; 
@@ -19,6 +27,14 @@ footer {
     font-size: 10pt;
     font-style: italic; 
     text-align: right;
+}
+
+footer:hover {
+    color: white;
+    font-weight: bold;
+    font-size: 13pt;
+    text-shadow: 2px 4px 3px DarkSlateGrey;
+    transition: 400ms 100ms;
 }
 
 a {
