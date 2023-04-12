@@ -6,15 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прыткова София Александровна. Лабораторная 5</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert("Сумма " + a + " и " + b + " равна " + result);
+        }
+    </script>
+    <style>
+        .message {
+            width: auto;
+            height: auto;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid;
+            border-radius: 7px;
+            background: linear-gradient(LightCyan, PowderBlue, LightSteelBlue);
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
 </head>
-
 <body>
     <header>
         НГТУ, ФБ, Лабораторная работа 5
     </header>
     
     <main>
-
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать, кто автор страницы</div>
     </main>
 
     <footer>
