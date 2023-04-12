@@ -68,6 +68,10 @@
             let output = document.getElementById('zena');
             output.innerHTML = "Общая цена: " + zena + " р";
         }
+        function unshow(id) {
+            let a = document.getElementById(id);
+            a.style.display = "none";
+        }
     </script>
     <style>
         .message {
@@ -100,6 +104,17 @@
         h2 {
             color: brown;
             font-size: 30px;
+        }
+
+        .krug {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -141,6 +156,17 @@
             <input type="button" value="Рассчитать" onclick="showZen()"> <br>
             <div id="zena"></div>
         </div>
+
+        <div class="krug" id="c1" onclick="unshow('c1')">1</div>
+        <div class="krug" id="c2" onclick="unshow('c2')">2</div>
+        <div class="krug" id="c3" onclick="unshow('c3')">3</div>
+        <div class="krug" id="c4" onclick="unshow('c4')">4</div>
+        <div class="krug" id="c5" onclick="unshow('c5')">5</div>
+        <div class="krug" id="c6" onclick="unshow('c6')">6</div>
+        <div class="krug" id="c7" onclick="unshow('c7')">7</div>
+        <div class="krug" id="c8" onclick="unshow('c8')">8</div>
+        <div class="krug" id="c9" onclick="unshow('c9')">9</div>
+        <div class="krug" id="c10" onclick="unshow('c10')">10</div>
     </main>
 
     <footer onclick="showAuthor()">
