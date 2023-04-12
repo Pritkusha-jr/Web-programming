@@ -54,6 +54,20 @@
             output.style.color = textColor;
             output.style.borderBlockColor = borderColor
         }
+        function showZen() {
+            let inputIab = document.getElementById("numberIab");
+            let inputGr = document.getElementById("numberGr");
+            let inputAp = document.getElementById("numberAp");
+            let inputDin = document.getElementById("numberDin");
+
+            let a = parseInt(inputIab.value);
+            let b = parseInt(inputGr.value);
+            let c = parseInt(inputAp.value);
+            let d = parseInt(inputDin.value);
+            let zena = 100 * a + 80 * b + 150 * c + 300 * d;
+            let output = document.getElementById('zena');
+            output.innerHTML = "Общая цена: " + zena + " р";
+        }
     </script>
     <style>
         .message {
@@ -72,6 +86,20 @@
             border: 1px solid;
             width: 300px;
             height: 40px;
+        }
+
+        .korzina {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid;
+            border-radius: 7px;
+            border-color: brown;
+            width: 200px;
+        }
+        
+        h2 {
+            color: brown;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -99,6 +127,20 @@
         </div>
 
         <div id="output"></div>
+
+        <div class="korzina"> 
+            <h2>Корзина товаров</h2><br>
+            <label>Яблоки (100р/шт): </label><br>
+            <input type="number" id="numberIab"> <br>
+            <label>Груши (80р/шт): </label><br>
+            <input type="number" id="numberGr"> <br>
+            <label>Апельсины (100р/шт):</label><br>
+            <input type="number" id="numberAp"> <br>
+            <label>Дыни (300р/шт):</label><br>
+            <input type="number" id="numberDin"> <br>
+            <input type="button" value="Рассчитать" onclick="showZen()"> <br>
+            <div id="zena"></div>
+        </div>
     </main>
 
     <footer onclick="showAuthor()">
