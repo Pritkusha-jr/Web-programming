@@ -30,6 +30,15 @@
             background-color: LightBlue;
             color: rgb(41, 87, 126);
         }
+
+        .color {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid;
+            border-radius: 20px;
+            background-color: yellow;
+            color: rgb(41, 87, 126);
+        }
     </style>
     <script>
         let number;
@@ -83,6 +92,34 @@
             rule[1].style.display = 'none';
             rule[0].style.display = 'block';
         }
+
+        function changeColor(div) {
+            if (div.style.backgroundColor == "yellow") {
+                div.style.color = "yellow"
+                div.style.backgroundColor = "red";
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if(div.style.backgroundColor == "red") {
+                div.style.color = "red"
+                div.style.backgroundColor = "green";
+                document.getElementById('color-name').innerHTML = 'зелёный';
+            }
+            else if(div.style.backgroundColor == "green") {
+                div.style.color = "yellow"
+                div.style.backgroundColor = "blue";
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else if(div.style.backgroundColor == "blue") {
+                div.style.color = "red"
+                div.style.backgroundColor = "purple";
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+            }
+            else {
+                div.style.backgroundColor = "yellow";
+                div.style.color = "purple"
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+            }
+        }
     </script>
 </head>
 
@@ -134,6 +171,10 @@
                 <li>Если вы угадали число, то вы молодец</li>
                 <li>Если вы хотите сыграть еще раз, нажмите на кнопку "Сыграть еще раз"</li>
             </ol>
+        </div>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет:<span id="color-name">жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
     </main>
 
