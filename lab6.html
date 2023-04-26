@@ -27,7 +27,8 @@
             padding: 20px;
             border: 1px solid;
             border-radius: 20px;
-            background-color: LightCyan;
+            background-color: LightBlue;
+            color: rgb(41, 87, 126);
         }
     </style>
     <script>
@@ -73,7 +74,14 @@
         }
 
         function ruleShow() {
-
+            let rule = document.getElementsByClassName('rules');
+            rule[0].style.display = 'none';
+            rule[1].style.display = 'block';
+        }
+        function ruleClose() {
+            let rule = document.getElementsByClassName('rules');
+            rule[1].style.display = 'none';
+            rule[0].style.display = 'block';
         }
     </script>
 </head>
@@ -116,14 +124,15 @@
         <div class="rules" >
             <button onclick="ruleShow()">Показать правила игры</button>
         </div>
-        <div class="rules" display="none">
-            <button onclick="ruleShow()">Скрыть правила игры</button>
+        <div class="rules" style="display:none">
+            <button onclick="ruleClose()">Скрыть правила игры</button>
             <ol type="I">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Сначала нажмите на кнопку "Сыграть в игру"</li>
+                <li>Потом впишите в ячейку предположительное угадываемое число</li>
+                <li>Нажмите на кнопку "Угадать"</li>
+                <li>Если вы не угадали число, то впишите новое, основываясь на поправках, написанных ниже</li>
+                <li>Если вы угадали число, то вы молодец</li>
+                <li>Если вы хотите сыграть еще раз, нажмите на кнопку "Сыграть еще раз"</li>
             </ol>
         </div>
     </main>
