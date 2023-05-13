@@ -38,6 +38,19 @@
             border-radius: 20px;
             background-color: yellow;
             color: rgb(41, 87, 126);
+            margin: 10px;
+        }
+
+        .block {
+            width: 150px;
+            cursor: pointer;
+            padding: 20px;
+            border: 1px solid;
+            border-radius: 20px;
+            margin: 10px;
+            background-color: PaleTurquoise;
+            position: relative;
+            right: 0;
         }
     </style>
     <script>
@@ -120,6 +133,9 @@
                 document.getElementById('color-name').innerHTML = 'жёлтый';
             }
         }
+        function blockMove() {
+            
+        }
     </script>
 </head>
 
@@ -175,6 +191,9 @@
         <div class="color" ondblclick="changeColor(this)">
             Цвет:<span id="color-name">жёлтый</span><br>
             Сделайте двойной щелчок, чтобы сменить.
+        </div>
+        <div class="block" onlclick="blockMove()">
+            Щёлкни меня
         </div>
     </main>
 
