@@ -48,7 +48,19 @@
             border: 1px solid;
             border-radius: 20px;
             margin: 10px;
-            background-color: PaleTurquoise;
+            background-color: rgb(168, 252, 252);
+            position: relative;
+            right: 0;
+        }
+        
+        .block2 {
+            width: 150px;
+            cursor: pointer;
+            padding: 20px;
+            border: 1px solid;
+            border-radius: 20px;
+            margin: 10px;
+            background-color: rgb(78, 228, 228);
             position: relative;
             right: 0;
         }
@@ -144,6 +156,16 @@
                 block.style.transform = "rotate(0)";
             }
         }
+        function increaseBlock() {
+            const block = document.getElementById("long-block");
+            const currentWidth = parseInt(block.style.width);
+            const newWidth = currentWidth + 50;
+            if (newWidth <= 1000) {
+                block.style.width = newWidth + "px";
+            } else {
+                block.style.width = "100px";
+            }
+        }
     </script>
 </head>
 
@@ -202,6 +224,10 @@
         </div>
         <div class="block" id="moving-block" onlclick="moveBlock()">
             Щёлкни меня
+        </div>
+
+        <div class="block2" id="long-block" onlclick="increaseBlock()">
+            Расширение
         </div>
     </main>
 
