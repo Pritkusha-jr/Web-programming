@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прыткова София Александровна. Лабораторная 7</title>
     <link rel="stylesheet" href="main.css">
+    <style>
+        
+    </style>
     <script>
         function addBlocks() {
             let blocks = document.getElementById('blocks');
@@ -35,6 +38,21 @@
             let average = sum / exchange.length;
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
         }
+        function addTransparentBlocks() {
+            let transparentBlocks = document.getElementById('transparent-blocks');
+            let newOpacity = 0.05;
+            for (let i = 0; i < 10; i++) {
+                let b = document.createElement('div');
+                b.style.backgroundColor = 'black';
+                b.style.height = '20px';
+                b.style.width = '100px';
+                b.style.margin = '5px';
+                b.style.opacity = newOpacity;
+                transparentBlocks.appendChild(b);
+
+                newOpacity += 0.1;
+            }
+        }
     </script>
 </head>
 <body>
@@ -49,6 +67,9 @@
         <button onclick="showExchange()">Курс доллара</button>
         <table border="1" id="dollar-exchange"></table>
         <div id="detail"></div>
+
+        <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
+        <div id="transparent-blocks"></div>
     </main>
 
     <footer>
