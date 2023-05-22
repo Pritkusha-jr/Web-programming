@@ -133,8 +133,16 @@
                 document.getElementById('color-name').innerHTML = 'жёлтый';
             }
         }
-        function blockMove() {
-            
+        function moveBlock() {
+            let block = document.getElementById("moving-block");
+            if (block.style.left == "0px") {
+                block.style.transform = "rotate(4turn)";
+                block.style.left = "calc(100% - 153px)";
+
+            } else {
+                block.style.left = "0";
+                block.style.transform = "rotate(0)";
+            }
         }
     </script>
 </head>
@@ -192,7 +200,7 @@
             Цвет:<span id="color-name">жёлтый</span><br>
             Сделайте двойной щелчок, чтобы сменить.
         </div>
-        <div class="block" onlclick="blockMove()">
+        <div class="block" id="moving-block" onlclick="moveBlock()">
             Щёлкни меня
         </div>
     </main>
