@@ -53,6 +53,33 @@
                 newOpacity += 0.1;
             }
         }
+        function colorChange() {
+            let circles = document.getElementById('circles');
+            let currentNum = document.getElementById('num');
+            let numCircles = parseInt(currentNum.value);
+            
+            for (let i = numCircles; i > 0; i--) {
+                let newCircles = document.createElement('div');
+                newCircles.innerHTML = (i)
+                
+                if (i % 2 == 0) {
+                    newCircles.style.backgroundColor = 'Teal'; 
+                }
+                else {
+                    newCircles.style.backgroundColor = 'Navy'
+                }
+                newCircles.style.height = '25px';
+                newCircles.style.width = '25px';
+                newCircles.style.margin = '5px';
+                newCircles.style.borderRadius = '50%';
+                newCircles.style.display = 'inline-block';
+                newCircles.style.textAlign = 'center';
+                newCircles.style.lineHeight = '25px';
+                newCircles.style.color = 'white';
+
+                circles.appendChild(newCircles);
+            }
+        }
     </script>
 </head>
 <body>
@@ -70,6 +97,10 @@
 
         <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
         <div id="transparent-blocks"></div>
+
+        <input id='num' type='number' value='5' placeholder='введите число кругов'>
+        <button onclick="colorChange()">Teal/Navy</button>
+        <div id="circles"></div>
     </main>
 
     <footer>
