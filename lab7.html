@@ -92,6 +92,79 @@
                 newTable.appendChild(newTr)
             }
         }
+        function showCurs() {
+            let curs = [30.17, 30.5, 31.4, 30.56, 31.59, 31.23, 30.8, 30.19, 30.55, 30.75];
+            let date = ['08.05.2023', '10.05.2023', '11.05.2023', '12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023', '18.05.2023',
+            '19.05.2023', '22.05.2023'];
+            let cursTable = document.getElementById('TableCurs');
+
+            for (let i = 0; i<curs.length; i++) {
+                let tr = document.createElement('tr');
+                let dateTd = document.createElement('td');
+                let cursTd = document.createElement('td');
+                let newTd = document.createElement('td');
+                dateTd.innerHTML = date[i];
+                cursTd.innerHTML = curs[i];
+                newTd.innerHTML = (curs[i] - curs[i-1]).toFixed(2);
+                tr.appendChild(dateTd);
+                tr.appendChild(cursTd);
+                tr.appendChild(newTd);
+                cursTable.appendChild(tr);
+            }
+            
+            let sum = 0;
+            for (let i = 0; i<curs.length; i++) {
+                sum = sum + curs[i];
+            }
+            let average = sum / curs.length;
+            document.getElementById('middlenum').innerHTML = 'Среднее значение: ' + average;
+
+            let maxCurs = Math.max(...curs);
+            let minCurs = Math.min(...curs);
+            document.getElementById('max').innerHTML = 'Максимльное значение: ' + maxCurs;
+            document.getElementById('min').innerHTML = 'Минимальное значение: ' + minCurs;
+ 
+        }
+        function showCourse() {
+            let course = [42.09, 41.62, 41.49, 40.87, 40.13,
+                        39.80, 40.19, 40.05, 39.75, 40.75];
+            let date = ['25.04.2023', '26.04.2023', '27.04.2023',
+                        '28.04.2023', '02.05.2023', '03.05.2023', 
+                        '04.05.2023', '05.05.2023','08.05.2023', 
+                        '10.05.2023'];
+            let courseTable = document.getElementById('tableCourse');
+
+            for (let i = 0; i < course.length; i++) {
+                let tr = document.createElement('tr');
+                let dateTd = document.createElement('td');
+                let courseTd = document.createElement('td');
+                let newTd = document.createElement('td');
+                dateTd.innerHTML = date[i];
+                courseTd.innerHTML = course[i];
+                newTd.innerHTML = (course[i] - course[i-1]).toFixed(2);
+                tr.appendChild(dateTd);
+                tr.appendChild(courseTd);
+                if(newTd.innerHTML != 'NaN') {
+                    tr.appendChild(newTd);
+                }
+                else{
+                    tr.append('-');
+                }
+                courseTable.appendChild(tr);
+            }
+
+            let sum = 0;
+            for (let i = 0; i<course.length; i++) {
+                sum = sum + course[i];
+            }
+            let average = sum / course.length;
+            document.getElementById('averageCourse').innerHTML = 'Среднее значение: ' + average;
+
+            let maxCourse = Math.max(...course);
+            let minCourse = Math.min(...course);
+            document.getElementById('maxCourse').innerHTML = 'Максимльное значение: ' + maxCourse;
+            document.getElementById('minCourse').innerHTML = 'Минимальное значение: ' + minCourse;
+        }
     </script>
 </head>
 <body>
@@ -116,6 +189,12 @@
 
         <button id="multiTable" onclick="tableMultiplication()">Таблица умножения</button>
         <table id="tableOfMultiplication"></table>
+
+        <button id="course" onclick="showCourse()">Курс акций ОК "Русал"</button>
+        <table border="1" id="tableCourse"></table>
+        <div id="averageCourse"></div>
+        <div id="maxCourse"></div>
+        <div id="minCourse"></div>
     </main>
 
     <footer>
