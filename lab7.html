@@ -111,12 +111,10 @@
                 newTd.innerHTML = (course[i] - course[i-1]).toFixed(2);
                 tr.appendChild(dateTd);
                 tr.appendChild(courseTd);
-                if(newTd.innerHTML != 'NaN') {
-                    tr.appendChild(newTd);
+                if(newTd.innerHTML == 'NaN') {
+                    newTd.innerHTML = '-'
                 }
-                else{
-                    tr.append('-');
-                }
+                tr.appendChild(newTd);
                 courseTable.appendChild(tr);
             }
 
