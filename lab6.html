@@ -43,23 +43,28 @@
 
         .block1 {
             width: 150px;
-            cursor: pointer;
-            padding: 20px;
+            height: 100px;
             border: 1px solid;
             border-radius: 20px;
-            margin: 10px;
-            background-color: rgb(168, 252, 252);
+            cursor: pointer;
             position: absolute;
-            left: 0;
+            left: 40px;
+            transition: 1ms;
+            margin: 20px auto;
+            background-color: rgb(168, 252, 252);
+            text-align: center;
+            line-height: 90px;
         }
         
         .block2 {
-            width: 150px;
-            cursor: pointer;
-            padding: 20px;
+            width: 100px;
+            height: 100px;
             border: 1px solid;
             border-radius: 20px;
-            margin: 10px;
+            margin: 20px;
+            text-align: center;
+            line-height: 90px;
+            margin-top: 150px;
             background-color: rgb(78, 228, 228);
         }
     </style>
@@ -156,14 +161,15 @@
            }
             
         }
-        function increaseBlock() {
-            let block = document.getElementById("long-block");
-            let currentWidth = parseInt(block.style.width);
+        function changeBlock() {
+            let blocc = document.getElementById("long-block");
+            let currentWidth = parseInt(blocc.style.width);
             let newWidth = currentWidth + 50;
             if (newWidth <= 1000) {
-                block.style.width = newWidth + "px";
-            } else {
-                block.style.width = "100px";
+            blocc.style.width = newWidth + "px";
+            }
+            else {
+            blocc.style.width = "100px";
             }
         }
         function filter() {
@@ -260,8 +266,7 @@
         </div>
         <div class="block1" id="moving-block" onclick="moveBlock()"> Щёлкни меня</div>
 
-        <div class="block2" id="long-block" onlclick="increaseBlock()">Расширение
-</div>
+        <div class="block2" id="long-block" onclick="changeBlock()">Расширение</div>
 
         <div style="margin-top: 50px;">
             Цвет одежды:
