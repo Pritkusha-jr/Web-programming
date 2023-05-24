@@ -41,7 +41,7 @@
             margin: 10px;
         }
 
-        .block {
+        .block1 {
             width: 150px;
             cursor: pointer;
             padding: 20px;
@@ -49,8 +49,8 @@
             border-radius: 20px;
             margin: 10px;
             background-color: rgb(168, 252, 252);
-            position: relative;
-            right: 0;
+            position: absolute;
+            left: 0;
         }
         
         .block2 {
@@ -61,8 +61,6 @@
             border-radius: 20px;
             margin: 10px;
             background-color: rgb(78, 228, 228);
-            position: relative;
-            right: 0;
         }
     </style>
     <script>
@@ -146,20 +144,22 @@
             }
         }
         function moveBlock() {
-            let block = document.getElementById("moving-block");
-            if (block.style.left == "0px") {
-                block.style.transform = "rotate(4turn)";
-                block.style.left = "calc(100% - 153px)";
-
-            } else {
-                block.style.left = "0";
-                block.style.transform = "rotate(0)";
-            }
+           let move = document.getElementById("moving-block");
+           if (move.style.left =="0px") {
+            move.style.transform = "rotate(4turn)";
+            move.style.left = "calc(100% - 153px)";
+           
+           }
+            else {
+            move.style.left = "0";
+            move.style.transform = "rotate(0)";
+           }
+            
         }
         function increaseBlock() {
-            const block = document.getElementById("long-block");
-            const currentWidth = parseInt(block.style.width);
-            const newWidth = currentWidth + 50;
+            let block = document.getElementById("long-block");
+            let currentWidth = parseInt(block.style.width);
+            let newWidth = currentWidth + 50;
             if (newWidth <= 1000) {
                 block.style.width = newWidth + "px";
             } else {
@@ -258,13 +258,10 @@
             Цвет:<span id="color-name">жёлтый</span><br>
             Сделайте двойной щелчок, чтобы сменить.
         </div>
-        <div class="block" id="moving-block" onlclick="moveBlock()">
-            Щёлкни меня
-        </div>
+        <div class="block1" id="moving-block" onclick="moveBlock()"> Щёлкни меня</div>
 
-        <div class="block2" id="long-block" onlclick="increaseBlock()">
-            Расширение
-        </div>
+        <div class="block2" id="long-block" onlclick="increaseBlock()">Расширение
+</div>
 
         <div style="margin-top: 50px;">
             Цвет одежды:
