@@ -3,6 +3,7 @@ body {
     color: teal; 
     font-family: Arial; 
     margin: 0px;
+    height: 100%;
 }
 
 header {
@@ -14,6 +15,7 @@ header {
 
 main {
     margin: 10px 20px;
+    min-height: 100%;
 }
 
 header:hover {
@@ -31,9 +33,9 @@ footer {
     font-size: 10pt;
     font-style: italic; 
     text-align: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;  
+    position: fixed;
+    bottom: 0;  
+    right: 0;
     left: 0;
 }
 
