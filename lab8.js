@@ -18,6 +18,11 @@ function showDayCount() {
     div.innerHTML = "Количество дней с даты рождения: " + daysCount
 }
 
+function Clear() {
+    let div = document.getElementById('div1');
+    div.innerHTML = "Количество дней с даты рождения:"
+}
+
 function showTime() {
     let today = new Date();
     let currentTime = today.toLocaleTimeString('ru-RU');
